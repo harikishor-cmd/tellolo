@@ -1,0 +1,97 @@
+{
+ "lang": "hi",
+ "label": "real_hi",
+ "steps": {
+  "story1": {
+   "child": "demo-kabir",
+   "hero": "मोती, a small brown puppy with a red collar",
+   "character": "मोती",
+   "id": "20261027-070605-1cb9",
+   "title": "मोती और नदी",
+   "trouble_words": [
+    "नदी",
+    "टोकरी",
+    "पेड़"
+   ],
+   "used": [
+    "नदी",
+    "टोकरी",
+    "पेड़"
+   ],
+   "pages": [
+    "मोती छोटा कुत्ता है।",
+    "सामने बड़ा पेड़ है।",
+    "पास में टोकरी है।",
+    "पास में साफ नदी है।",
+    "मछली पानी में तैरती है। मोती खुश है।"
+   ],
+   "devanagari": true
+  },
+  "planted": {
+   "substituted": "कुत्ता",
+   "missed": "छोटा"
+  },
+  "spoken_page1": "मोती केला है।",
+  "flags_p1": [
+   [
+    "मोती",
+    "correct"
+   ],
+   [
+    "छोटा",
+    "missed"
+   ],
+   [
+    "कुत्ता",
+    "substituted"
+   ],
+   [
+    "है।",
+    "correct"
+   ]
+  ],
+  "result_p1": "2 tricky words on this page. Tap them to hear them!",
+  "tap_to_hear": [
+   "छोटा"
+  ],
+  "flags_p2_nonclean": [],
+  "result_p2": "🌟 Perfect reading!",
+  "story2": {
+   "id": "20261027-070656-de34",
+   "title": "मोती की सैर",
+   "trouble_words": [
+    "छोटा",
+    "कुत्ता",
+    "नदी"
+   ],
+   "used": [
+    "छोटा",
+    "कुत्ता",
+    "नदी"
+   ],
+   "parent": "20261027-070605-1cb9",
+   "pages": [
+    "मोती एक छोटा कुत्ता है।",
+    "वह नदी के पास गया।",
+    "उसने पानी में मछली देखी।",
+    "पेड़ पर चिड़िया बैठी थी।",
+    "मोती खुश होकर घर लौटा।"
+   ]
+  },
+  "fresh_title": true,
+  "story2_p1_nonclean": [],
+  "summary": "Reading progress: demo-kabir\n2\nstories read\n3\npages read aloud\n88%\nwords read well\nNext story will practise: छोटाकुत्तानदी\nStory\tLanguage\tPractised\tPages\tRead well\tTricky words\nमोती की सैर follow-up\tHindi\tछोटा, कुत्ता, नदी\t1/5\t100%\t\nमोती और नदी\tHindi\tनदी, टोकरी, पेड़\t2/5\t75%\tकुत्ता, छोटा\n\nKept only on this computer. Audio is never saved. Show all children and older test sessions"
+ },
+ "timings_s": {
+  "story": 29.6,
+  "story1_first_page": 8.5,
+  "story1_all_pages": 24.0,
+  "read_p1_errors_check": 1.1,
+  "read_p2_clean_check": 0.8,
+  "next_story": 16.8,
+  "story2_first_page": 7.7,
+  "story2_all_pages": 24.0,
+  "read_story2_p1_clean_check": 1.0
+ },
+ "ok": true
+}

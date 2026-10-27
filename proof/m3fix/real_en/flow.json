@@ -1,0 +1,105 @@
+{
+ "lang": "en",
+ "label": "real_en",
+ "steps": {
+  "story1": {
+   "child": "demo-asha",
+   "hero": "Rosie, a small grey rabbit with a yellow raincoat",
+   "character": "Rosie",
+   "id": "20261027-070421-6e3a",
+   "title": "Rosie Hops on a Rainy Day",
+   "trouble_words": [
+    "river",
+    "basket",
+    "through"
+   ],
+   "used": [
+    "river",
+    "basket",
+    "through"
+   ],
+   "pages": [
+    "Rosie hops out in the rain.",
+    "She sees the fast river.",
+    "She has a small red basket.",
+    "She hops through soft green grass.",
+    "She sits and watches fish swim."
+   ],
+   "devanagari": false
+  },
+  "planted": {
+   "substituted": "hops",
+   "missed": "rain."
+  },
+  "spoken_page1": "Rosie banana out in the",
+  "flags_p1": [
+   [
+    "Rosie",
+    "correct"
+   ],
+   [
+    "hops",
+    "substituted"
+   ],
+   [
+    "out",
+    "correct"
+   ],
+   [
+    "in",
+    "correct"
+   ],
+   [
+    "the",
+    "missed"
+   ],
+   [
+    "rain.",
+    "substituted"
+   ]
+  ],
+  "result_p1": "3 tricky words on this page. Tap them to hear them!",
+  "tap_to_hear": [
+   "hops"
+  ],
+  "flags_p2_nonclean": [],
+  "result_p2": "🌟 Perfect reading!",
+  "story2": {
+   "id": "20261027-070508-f24b",
+   "title": "Rosie Splashes by the River",
+   "trouble_words": [
+    "hops",
+    "the",
+    "rain"
+   ],
+   "used": [
+    "hops",
+    "the",
+    "rain"
+   ],
+   "parent": "20261027-070421-6e3a",
+   "pages": [
+    "Rosie lives near the wide river.",
+    "She sees soft rain on the leaves.",
+    "Rosie hops by the wet mud.",
+    "A duck swims fast in the river.",
+    "Rosie waves at the duck and smiles."
+   ]
+  },
+  "fresh_title": true,
+  "story2_p1_nonclean": [],
+  "summary": "Reading progress: demo-asha\n2\nstories read\n3\npages read aloud\n88%\nwords read well\nNext story will practise: hopstherain\nStory\tLanguage\tPractised\tPages\tRead well\tTricky words\nRosie Splashes by the River follow-up\tEnglish\thops, the, rain\t1/5\t100%\t\nRosie Hops on a Rainy Day\tEnglish\triver, basket, through\t2/5\t75%\thops, rain, the\n\nKept only on this computer. Audio is never saved. Show all children and older test sessions"
+ },
+ "timings_s": {
+  "story": 15.5,
+  "story1_first_page": 9.2,
+  "story1_all_pages": 21.8,
+  "read_p1_errors_check": 1.0,
+  "read_p2_clean_check": 1.1,
+  "next_story": 14.5,
+  "story2_first_page": 8.5,
+  "story2_all_pages": 19.7,
+  "read_story2_p1_clean_check": 1.1
+ },
+ "ok": true
+}

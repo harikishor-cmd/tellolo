@@ -1,0 +1,115 @@
+{
+ "lang": "en",
+ "label": "run2_en",
+ "steps": {
+  "story1": {
+   "id": "20261027-064540-a060",
+   "title": "Pip the Little Otter",
+   "trouble_words": [
+    "river",
+    "basket",
+    "through"
+   ],
+   "used": [
+    "river",
+    "basket",
+    "through"
+   ],
+   "pages": [
+    "Pip is a little otter. He lives near the river.",
+    "He finds a small basket. He hugs it tight.",
+    "He swims through calm water. He kicks his feet.",
+    "He finds round stones. He puts them in the basket.",
+    "He naps in the warm sun. He dreams of the river."
+   ],
+   "devanagari": false
+  },
+  "planted": {
+   "substituted": "little",
+   "missed": "otter."
+  },
+  "spoken_page1": "Pip is a banana He lives near the river.",
+  "flags_p1": [
+   [
+    "Pip",
+    "missed"
+   ],
+   [
+    "is",
+    "substituted"
+   ],
+   [
+    "a",
+    "correct"
+   ],
+   [
+    "little",
+    "missed"
+   ],
+   [
+    "otter.",
+    "substituted"
+   ],
+   [
+    "He",
+    "correct"
+   ],
+   [
+    "lives",
+    "correct"
+   ],
+   [
+    "near",
+    "correct"
+   ],
+   [
+    "the",
+    "correct"
+   ],
+   [
+    "river.",
+    "correct"
+   ]
+  ],
+  "result_p1": "4 tricky words on this page. Tap them to hear them!",
+  "tap_to_hear": [
+   "Pip"
+  ],
+  "flags_p2_nonclean": [],
+  "result_p2": "🌟 Perfect reading!",
+  "story2": {
+   "id": "20261027-064623-c938",
+   "title": "Ollie and the River",
+   "trouble_words": [
+    "little",
+    "otter",
+    "river"
+   ],
+   "used": [
+    "little",
+    "otter",
+    "river"
+   ],
+   "parent": "20261027-064540-a060",
+   "pages": [
+    "Ollie is a little otter.",
+    "Ollie lives by the river.",
+    "Ollie likes to swim fast.",
+    "Ollie likes to splash and play.",
+    "Ollie naps in the soft sun."
+   ]
+  },
+  "summary": "Reading progress\n3\nstories read\n5\npages read aloud\n84%\nwords read well\nNext story will practise: littleotterriver\nStory\tLanguage\tPractised\tPages\tRead well\tTricky words\nPip the Little Otter\tEnglish\triver, basket, through\t2/5\t80%\tPip, is, little, otter\nचुन्नू की सैर\tHindi\tनदी, टोकरी, पेड़\t2/5\t91%\tचुन्नू, बत्तख\nMilo and the Basket\tEnglish\triver, basket, through\t1/5\t80%\tbasket, wakes\n\nKept only on this computer. Audio is never saved. Show test sessions"
+ },
+ "timings_s": {
+  "story": 9.4,
+  "story1_first_page": 11.3,
+  "story1_all_pages": 21.8,
+  "read_p1_errors_check": 1.2,
+  "read_p2_clean_check": 1.3,
+  "next_story": 7.0,
+  "story2_first_page": 8.5,
+  "story2_all_pages": 21.8
+ },
+ "ok": true
+}

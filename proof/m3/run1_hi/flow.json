@@ -1,0 +1,119 @@
+{
+ "lang": "hi",
+ "label": "run1_hi",
+ "steps": {
+  "story1": {
+   "id": "20261027-064425-ffe2",
+   "title": "चुन्नू की सैर",
+   "trouble_words": [
+    "नदी",
+    "टोकरी",
+    "पेड़"
+   ],
+   "used": [
+    "नदी",
+    "टोकरी",
+    "पेड़"
+   ],
+   "pages": [
+    "चुन्नू एक छोटी बत्तख थी। वह नदी के पास रहती थी।",
+    "सुबह वह टोकरी लेकर चली।",
+    "रास्ते में बड़ा पेड़ था।",
+    "वह पानी में खूब तैरी।",
+    "शाम को वह घर लौटी।"
+   ],
+   "devanagari": true
+  },
+  "planted": {
+   "substituted": "चुन्नू",
+   "missed": "बत्तख"
+  },
+  "spoken_page1": "केला एक छोटी थी। वह नदी के पास रहती थी।",
+  "flags_p1": [
+   [
+    "चुन्नू",
+    "substituted"
+   ],
+   [
+    "एक",
+    "correct"
+   ],
+   [
+    "छोटी",
+    "correct"
+   ],
+   [
+    "बत्तख",
+    "missed"
+   ],
+   [
+    "थी।",
+    "correct"
+   ],
+   [
+    "वह",
+    "correct"
+   ],
+   [
+    "नदी",
+    "correct"
+   ],
+   [
+    "के",
+    "correct"
+   ],
+   [
+    "पास",
+    "correct"
+   ],
+   [
+    "रहती",
+    "correct"
+   ],
+   [
+    "थी।",
+    "correct"
+   ]
+  ],
+  "result_p1": "2 tricky words on this page. Tap them to hear them!",
+  "tap_to_hear": [
+   "चुन्नू"
+  ],
+  "flags_p2_nonclean": [],
+  "result_p2": "🌟 Perfect reading!",
+  "story2": {
+   "id": "20261027-064507-dffa",
+   "title": "चुन्नू की सैर",
+   "trouble_words": [
+    "बत्तख",
+    "नदी",
+    "टोकरी"
+   ],
+   "used": [
+    "बत्तख",
+    "नदी",
+    "टोकरी"
+   ],
+   "parent": "20261027-064425-ffe2",
+   "pages": [
+    "चुन्नू एक छोटी बत्तख है।",
+    "वह नदी के पास रहती है।",
+    "उसके पास एक छोटी टोकरी है।",
+    "वह पानी में तैरती है।",
+    "वह बहुत खुश है।"
+   ]
+  },
+  "summary": "Reading progress\n2\nstories read\n3\npages read aloud\n85%\nwords read well\nNext story will practise: बत्तखनदीटोकरी\nStory\tLanguage\tPractised\tPages\tRead well\tTricky words\nचुन्नू की सैर\tHindi\tनदी, टोकरी, पेड़\t2/5\t91%\tचुन्नू, बत्तख\nMilo and the Basket\tEnglish\triver, basket, through\t1/5\t80%\tbasket, wakes\n\nKept only on this computer. Audio is never saved. Show test sessions"
+ },
+ "timings_s": {
+  "story": 10.4,
+  "story1_first_page": 7.1,
+  "story1_all_pages": 19.7,
+  "read_p1_errors_check": 1.3,
+  "read_p2_clean_check": 1.0,
+  "next_story": 7.8,
+  "story2_first_page": 9.9,
+  "story2_all_pages": 22.5
+ },
+ "ok": true
+}

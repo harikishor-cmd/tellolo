@@ -1,0 +1,198 @@
+{
+ "mode": "meta",
+ "stories": {
+  "en": {
+   "id": "20261027-062037-7fa6",
+   "title": "Pip by the Water",
+   "pages": 5,
+   "trouble_words": [
+    "river",
+    "basket",
+    "through"
+   ],
+   "trouble_words_used": [
+    "river",
+    "basket",
+    "through"
+   ],
+   "devanagari": true,
+   "text": [
+    "Pip is a little otter. He lives by the river.",
+    "Pip has a small red basket. He puts shells in it.",
+    "Pip swims through the clear water. He kicks his feet.",
+    "He sees tall green plants. He taps them with his nose.",
+    "At night Pip is sleepy. He sleeps in soft grass."
+   ]
+  },
+  "hi": {
+   "id": "20261027-062055-fa51",
+   "title": "मीनू और नदी",
+   "pages": 5,
+   "trouble_words": [
+    "नदी",
+    "टोकरी",
+    "पेड़"
+   ],
+   "trouble_words_used": [
+    "नदी",
+    "टोकरी",
+    "पेड़"
+   ],
+   "devanagari": true,
+   "text": [
+    "मीनू छोटी मछली है। वह नदी में तैरती है।",
+    "सुबह पानी ठंडा है। मीनू खुश है।",
+    "किनारे बड़ा पेड़ है। मीनू उसे देखती है।",
+    "पानी में एक टोकरी है। मीनू पास जाती है।",
+    "मीनू टोकरी हटाती है। पानी साफ लगता है।"
+   ]
+  }
+ },
+ "asr": {
+  "en": {
+   "clean_error_rate": 0.0385,
+   "clean_heard": "pip is a little a little otter, he lives by the river, pip has a small red basket, he puts shells in it, Pip swims through the clear water, he kicks his feet, feet, he sees tall green plants, he taps them with his nose, at night Pip is sleepy, he sleeps in soft grass,.",
+   "clean_flags": [],
+   "clean_insertions": [
+    "a",
+    "little"
+   ],
+   "planted": [
+    {
+     "index": 10,
+     "word": "pip",
+     "planted": "substituted",
+     "flag": "substituted",
+     "heard": "banana"
+    },
+    {
+     "index": 26,
+     "word": "water",
+     "planted": "missed",
+     "flag": "missed",
+     "heard": ""
+    },
+    {
+     "index": 41,
+     "word": "nose",
+     "planted": "substituted",
+     "flag": "substituted",
+     "heard": "dog"
+    }
+   ],
+   "planted_caught": 3,
+   "errors_read_extra_flags": 2,
+   "errors_heard": "Pip a little logger he lives by the river river Banana has a small red basket he puts shells in it Pip swims through the clear he kicks his feet he sees tall green plants he taps them with his dog at night Pip is sleepy he sleeps in soft grass"
+  },
+  "hi": {
+   "clean_error_rate": 0.122,
+   "clean_heard": "मीनू सोटी मसली है। महनदी में बहती है। सुबह पानी ठंडा है। मीनू खुश है। किनारे बड़ा पेड़ है। मीनू उसे देखती है। पानी में एक टोकरी है। मीनू पास जाती है। है। मीनू टोकरी हटाती है। पानी साफ लगता है।",
+   "clean_flags": [
+    {
+     "word": "छोटी",
+     "status": "substituted",
+     "heard": "सोटी"
+    },
+    {
+     "word": "मछली",
+     "status": "substituted",
+     "heard": "मसली"
+    },
+    {
+     "word": "वह",
+     "status": "missed",
+     "heard": ""
+    },
+    {
+     "word": "नदी",
+     "status": "substituted",
+     "heard": "महनदी"
+    },
+    {
+     "word": "तैरती",
+     "status": "substituted",
+     "heard": "बहती"
+    }
+   ],
+   "clean_insertions": [],
+   "planted": [
+    {
+     "index": 8,
+     "word": "है",
+     "planted": "substituted",
+     "flag": "missed",
+     "heard": ""
+    },
+    {
+     "index": 20,
+     "word": "मीनू",
+     "planted": "missed",
+     "flag": "missed",
+     "heard": ""
+    },
+    {
+     "index": 32,
+     "word": "है",
+     "planted": "substituted",
+     "flag": "missed",
+     "heard": ""
+    }
+   ],
+   "planted_caught": 3,
+   "errors_read_extra_flags": 38,
+   "errors_heard": ""
+  }
+ },
+ "contact_sheet": "proof/meta/contact_sheet.png",
+ "story_for_browser": "20261027-062037-7fa6",
+ "meta_calls": [
+  [
+   "/chat/completions",
+   200
+  ],
+  [
+   "/asr/transcribe",
+   200
+  ],
+  [
+   "/asr/transcribe",
+   200
+  ],
+  [
+   "/chat/completions",
+   200
+  ],
+  [
+   "/asr/transcribe",
+   200
+  ],
+  [
+   "/asr/transcribe",
+   200
+  ],
+  [
+   "/images/generations",
+   200
+  ],
+  [
+   "/images/edits",
+   200
+  ],
+  [
+   "/images/edits",
+   200
+  ],
+  [
+   "/images/edits",
+   200
+  ],
+  [
+   "/images/edits",
+   200
+  ],
+  [
+   "/images/edits",
+   200
+  ]
+ ]
+}

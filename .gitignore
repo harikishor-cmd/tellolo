@@ -1,0 +1,19 @@
+.venv/
+venv/
+node_modules/
+__pycache__/
+*.pyc
+.env
+.env*
+# Runtime data: child profiles, generated stories, images and readings
+data/*
+!data/.gitkeep
+static/out/*
+!static/out/.gitkeep
+# Large proof media (curated screenshots live in docs/screenshots/)
+proof/**/*.png
+proof/**/*.wav
+proof/**/*.mp3
+proof/**/*.webm
+*.webm
+*.ogg

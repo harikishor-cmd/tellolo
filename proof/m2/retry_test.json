@@ -1,0 +1,92 @@
+[
+ {
+  "case": "503 then 503 then 200 -> recovers",
+  "server_plan": [
+   503,
+   503,
+   200
+  ],
+  "attempts": [
+   503,
+   503,
+   200
+  ],
+  "ok": true,
+  "message": "hello there",
+  "seconds": 0.61,
+  "pass": true
+ },
+ {
+  "case": "429 with Retry-After then 200 -> recovers",
+  "server_plan": [
+   429,
+   200
+  ],
+  "attempts": [
+   429,
+   200
+  ],
+  "ok": true,
+  "message": "hello there",
+  "seconds": 1.0,
+  "pass": true
+ },
+ {
+  "case": "timeout then 200 -> recovers",
+  "server_plan": [
+   "sleep",
+   200
+  ],
+  "attempts": [
+   "ReadTimeout",
+   200
+  ],
+  "ok": true,
+  "message": "hello there",
+  "seconds": 1.21,
+  "pass": true
+ },
+ {
+  "case": "500 x3 -> gives up with clear message",
+  "server_plan": [
+   500,
+   500,
+   500
+  ],
+  "attempts": [
+   500,
+   500,
+   500
+  ],
+  "ok": false,
+  "message": "Meta is busy or erroring (500); gave up after 3 tries on /asr/transcribe. Try again in a minute.",
+  "seconds": 0.61,
+  "pass": true
+ },
+ {
+  "case": "401 -> no retry, key message",
+  "server_plan": [
+   401
+  ],
+  "attempts": [
+   401
+  ],
+  "ok": false,
+  "message": "Meta rejected the API key (401). Check META_API_KEY on the server.",
+  "seconds": 0.0,
+  "pass": true
+ },
+ {
+  "case": "400 -> no retry",
+  "server_plan": [
+   400
+  ],
+  "attempts": [
+   400
+  ],
+  "ok": false,
+  "message": "Meta refused the request (400): {\"error\": \"fake\"}",
+  "seconds": 0.0,
+  "pass": true
+ }
+]

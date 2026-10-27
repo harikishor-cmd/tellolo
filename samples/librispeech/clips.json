@@ -1,0 +1,29 @@
+{
+ "source": "LibriSpeech via hf-internal-testing/librispeech_asr_dummy (clean/validation); LibriSpeech is CC BY 4.0 (Panayotov et al., openslr.org/12); adult LibriVox public-domain readers",
+ "clips": [
+  {
+   "file": "0.wav",
+   "text": "MISTER QUILTER IS THE APOSTLE OF THE MIDDLE CLASSES AND WE ARE GLAD TO WELCOME HIS GOSPEL",
+   "speaker_id": 1272,
+   "id": "1272-128104-0000"
+  },
+  {
+   "file": "1.wav",
+   "text": "NOR IS MISTER QUILTER'S MANNER LESS INTERESTING THAN HIS MATTER",
+   "speaker_id": 1272,
+   "id": "1272-128104-0001"
+  },
+  {
+   "file": "2.wav",
+   "text": "HE TELLS US THAT AT THIS FESTIVE SEASON OF THE YEAR WITH CHRISTMAS AND ROAST BEEF LOOMING BEFORE US SIMILES DRAWN FROM EATING AND ITS RESULTS OCCUR MOST READILY TO THE MIND",
+   "speaker_id": 1272,
+   "id": "1272-128104-0002"
+  },
+  {
+   "file": "3.wav",
+   "text": "HE HAS GRAVE DOUBTS WHETHER SIR FREDERICK LEIGHTON'S WORK IS REALLY GREEK AFTER ALL AND CAN DISCOVER IN IT BUT LITTLE OF ROCKY ITHACA",
+   "speaker_id": 1272,
+   "id": "1272-128104-0003"
+  }
+ ]
+}

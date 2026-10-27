@@ -1,0 +1,114 @@
+{
+ "mode": "mock",
+ "story1": {
+  "id": "20261027-063807-adc8",
+  "title": "Tinku (beginner)",
+  "trouble_words": [
+   "river",
+   "basket",
+   "through"
+  ],
+  "used": [
+   "river",
+   "basket",
+   "through"
+  ],
+  "seconds": 0.0,
+  "page1": "Tinku the little fox found a river under the old tree."
+ },
+ "planted": {
+  "substituted": "little",
+  "missed": "Tinku"
+ },
+ "spoken_by_tts": "the banana fox found a river under the old tree.",
+ "first_page_ms_browser": 3027,
+ "all_pages_ms_browser": 5034,
+ "image_status": "All 5 pictures ready",
+ "server_image_timings_s": {
+  "status": "done",
+  "started": 1793083088.4478998,
+  "timings": {
+   "1": 2.0,
+   "2": 4.0,
+   "4": 4.0,
+   "3": 4.0,
+   "5": 4.0
+  },
+  "errors": {},
+  "total_s": 4.0
+ },
+ "read_result": " errors: 2, error rate 18.2% — heard: \"the banana fox found a river under the old tree.\"",
+ "flag_spans": [
+  [
+   "Tinku",
+   "missed"
+  ],
+  [
+   "the",
+   "correct"
+  ],
+  [
+   "little",
+   "substituted"
+  ],
+  [
+   "fox",
+   "correct"
+  ],
+  [
+   "found",
+   "correct"
+  ],
+  [
+   "a",
+   "correct"
+  ],
+  [
+   "river",
+   "correct"
+  ],
+  [
+   "under",
+   "correct"
+  ],
+  [
+   "the",
+   "correct"
+  ],
+  [
+   "old",
+   "correct"
+  ],
+  [
+   "tree.",
+   "correct"
+  ]
+ ],
+ "tap_to_hear_spoken": [
+  "Tinku"
+ ],
+ "story2": {
+  "id": "20261027-063818-682e",
+  "title": "Tinku (beginner)",
+  "trouble_words": [
+   "little",
+   "river",
+   "basket"
+  ],
+  "used": [
+   "little",
+   "river",
+   "basket"
+  ],
+  "parent": "20261027-063807-adc8",
+  "pages": [
+   "Tinku the little fox found a little under the old tree.",
+   "She showed the little to her friend, a river who lived by the river.",
+   "Together they walked to the basket to find out who lost it.",
+   "The river said the basket was too far, but Tinku kept going.",
+   "At sunset they found the owner, and everyone shared a little and laughed."
+  ]
+ },
+ "summary_text": "Story\tLang\tPractised words\tPages read\tAvg error rate\tWords to practise\tNext story will use\nTinku (beginner)\ten\triver, basket, through\t1/5\t18.2%\tTinku, little\tlittle, river, basket",
+ "bad_id_error_shown": "⚠ Bad request: story not found"
+}

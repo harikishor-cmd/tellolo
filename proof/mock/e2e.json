@@ -1,0 +1,119 @@
+{
+ "mode": "mock",
+ "stories": {
+  "en": {
+   "id": "20261027-062006-9ad8",
+   "title": "Tinku (beginner)",
+   "pages": 5,
+   "trouble_words": [
+    "river",
+    "basket",
+    "through"
+   ],
+   "trouble_words_used": [
+    "river",
+    "basket",
+    "through"
+   ],
+   "devanagari": true,
+   "text": [
+    "Tinku the little fox found a river under the old tree.",
+    "She showed the river to her friend, a basket who lived by the river.",
+    "Together they walked to the through to find out who lost it.",
+    "The basket said the through was too far, but Tinku kept going.",
+    "At sunset they found the owner, and everyone shared a river and laughed."
+   ]
+  },
+  "hi": {
+   "id": "20261027-062006-33d6",
+   "title": "टिंकी (beginner)",
+   "pages": 5,
+   "trouble_words": [
+    "नदी",
+    "टोकरी",
+    "पेड़"
+   ],
+   "trouble_words_used": [
+    "नदी",
+    "टोकरी",
+    "पेड़"
+   ],
+   "devanagari": true,
+   "text": [
+    "टिंकी नाम की छोटी लोमड़ी को पुराने पेड़ के नीचे एक नदी मिला।",
+    "उसने नदी अपने दोस्त टोकरी को दिखाया जो नदी के पास रहता था।",
+    "दोनों पेड़ की ओर चल पड़े ताकि पता चले कि वह किसका है।",
+    "टोकरी ने कहा कि पेड़ बहुत दूर है, पर टिंकी चलती रही।",
+    "शाम को उन्हें मालिक मिल गया, और सबने मिलकर नदी बाँटा और खूब हँसे।"
+   ]
+  }
+ },
+ "asr": {
+  "en": {
+   "clean_error_rate": 0.0,
+   "clean_heard": "Tinku the little fox found a river under the old tree. She showed the river to her friend, a basket who lived by the river. Together they walked to the through to find out who lost it. The basket said the through was too far, but Tinku kept going. At sunset they found the owner, and everyone shared a river and laughed.",
+   "clean_flags": [],
+   "clean_insertions": [],
+   "planted": [
+    {
+     "index": 12,
+     "word": "showed",
+     "planted": "substituted",
+     "flag": "substituted",
+     "heard": "banana"
+    },
+    {
+     "index": 31,
+     "word": "to",
+     "planted": "missed",
+     "flag": "missed",
+     "heard": ""
+    },
+    {
+     "index": 49,
+     "word": "at",
+     "planted": "substituted",
+     "flag": "substituted",
+     "heard": "dog"
+    }
+   ],
+   "planted_caught": 3,
+   "errors_read_extra_flags": 0,
+   "errors_heard": "tinku the little fox found a river under the old tree she banana the river to her friend a basket who lived by the river together they walked to the through find out who lost it the basket said the through was too far but tinku kept going dog sunset they found the owner and everyone shared a river and laughed"
+  },
+  "hi": {
+   "clean_error_rate": 0.0,
+   "clean_heard": "टिंकी नाम की छोटी लोमड़ी को पुराने पेड़ के नीचे एक नदी मिला। उसने नदी अपने दोस्त टोकरी को दिखाया जो नदी के पास रहता था। दोनों पेड़ की ओर चल पड़े ताकि पता चले कि वह किसका है। टोकरी ने कहा कि पेड़ बहुत दूर है, पर टिंकी चलती रही। शाम को उन्हें मालिक मिल गया, और सबने मिलकर नदी बाँटा और खूब हँसे।",
+   "clean_flags": [],
+   "clean_insertions": [],
+   "planted": [
+    {
+     "index": 13,
+     "word": "उसने",
+     "planted": "substituted",
+     "flag": "substituted",
+     "heard": "केला"
+    },
+    {
+     "index": 32,
+     "word": "ताकि",
+     "planted": "missed",
+     "flag": "missed",
+     "heard": ""
+    },
+    {
+     "index": 52,
+     "word": "को",
+     "planted": "substituted",
+     "flag": "substituted",
+     "heard": "कुत्ता"
+    }
+   ],
+   "planted_caught": 3,
+   "errors_read_extra_flags": 0,
+   "errors_heard": "टिंकी नाम की छोटी लोमडी को पुराने पेड के नीचे एक नदी मिला केला नदी अपने दोस्त टोकरी को दिखाया जो नदी के पास रहता था दोनों पेड की ओर चल पडे पता चले कि वह किसका है टोकरी ने कहा कि पेड बहुत दूर है पर टिंकी चलती रही शाम कुत्ता उन्हें मालिक मिल गया और सबने मिलकर नदी बाँटा और खूब हँसे"
+  }
+ },
+ "contact_sheet": "proof/mock/contact_sheet.png",
+ "story_for_browser": "20261027-062006-9ad8"
+}

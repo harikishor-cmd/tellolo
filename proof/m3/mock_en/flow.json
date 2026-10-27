@@ -1,0 +1,128 @@
+{
+ "lang": "en",
+ "label": "mock_en",
+ "steps": {
+  "story1": {
+   "id": "20261027-064343-5cbd",
+   "title": "Tinku (beginner)",
+   "trouble_words": [
+    "river",
+    "basket",
+    "through"
+   ],
+   "used": [
+    "river",
+    "basket",
+    "through"
+   ],
+   "pages": [
+    "Tinku the little fox found a river under the old tree.",
+    "She showed the river to her friend, a basket who lived by the river.",
+    "Together they walked to the through to find out who lost it.",
+    "The basket said the through was too far, but Tinku kept going.",
+    "At sunset they found the owner, and everyone shared a river and laughed."
+   ],
+   "devanagari": false
+  },
+  "planted": {
+   "substituted": "little",
+   "missed": "Tinku"
+  },
+  "spoken_page1": "the banana fox found a river under the old tree.",
+  "flags_p1": [
+   [
+    "Tinku",
+    "missed"
+   ],
+   [
+    "the",
+    "correct"
+   ],
+   [
+    "little",
+    "substituted"
+   ],
+   [
+    "fox",
+    "correct"
+   ],
+   [
+    "found",
+    "correct"
+   ],
+   [
+    "a",
+    "correct"
+   ],
+   [
+    "river",
+    "correct"
+   ],
+   [
+    "under",
+    "correct"
+   ],
+   [
+    "the",
+    "correct"
+   ],
+   [
+    "old",
+    "correct"
+   ],
+   [
+    "tree.",
+    "correct"
+   ]
+  ],
+  "result_p1": "2 tricky words on this page. Tap them to hear them!",
+  "tap_to_hear": [
+   "Tinku"
+  ],
+  "flags_p2_nonclean": [
+   [
+    "showed",
+    "substituted"
+   ],
+   [
+    "friend,",
+    "missed"
+   ]
+  ],
+  "result_p2": "2 tricky words on this page. Tap them to hear them!",
+  "story2": {
+   "id": "20261027-064359-09e2",
+   "title": "Tinku (beginner)",
+   "trouble_words": [
+    "little",
+    "showed",
+    "friend"
+   ],
+   "used": [
+    "little",
+    "showed",
+    "friend"
+   ],
+   "parent": "20261027-064343-5cbd",
+   "pages": [
+    "Tinku the little fox found a little under the old tree.",
+    "She showed the little to her friend, a showed who lived by the river.",
+    "Together they walked to the friend to find out who lost it.",
+    "The showed said the friend was too far, but Tinku kept going.",
+    "At sunset they found the owner, and everyone shared a little and laughed."
+   ]
+  },
+  "summary": "Reading progress\n1\nstories read\n1\npages read aloud\n80%\nwords read well\nNext story will practise: wakesbasketriver\nStory\tLanguage\tPractised\tPages\tRead well\tTricky words\nMilo and the Basket\tEnglish\triver, basket, through\t1/5\t80%\tbasket, wakes\n\nKept only on this computer. Audio is never saved. Show test sessions"
+ },
+ "timings_s": {
+  "story": 0.1,
+  "story1_first_page": 1.4,
+  "story1_all_pages": 2.1,
+  "read_p1_errors_check": 0.1,
+  "read_p2_clean_check": 0.1,
+  "next_story": 0.1,
+  "story2_first_page": 1.4,
+  "story2_all_pages": 2.1
+ },
+ "ok": true
+}

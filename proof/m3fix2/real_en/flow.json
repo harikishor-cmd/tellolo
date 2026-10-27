@@ -1,0 +1,127 @@
+{
+ "lang": "en",
+ "label": "real_en",
+ "steps": {
+  "story1": {
+   "child": "demo-asha",
+   "hero": "Rosie, a small grey rabbit with a yellow raincoat",
+   "character": "Rosie",
+   "id": "20261027-071129-cfdd",
+   "title": "Rosie Brings a Basket to the River",
+   "trouble_words": [
+    "river",
+    "basket",
+    "through"
+   ],
+   "used": [
+    "river",
+    "basket",
+    "through"
+   ],
+   "pages": [
+    "Rosie is a small rabbit. She puts on her yellow coat.",
+    "She hops to the river.",
+    "She has a red basket.",
+    "She peeks through the green grass.",
+    "She sees a duck and a frog. They play all day."
+   ],
+   "devanagari": false
+  },
+  "planted": {
+   "substituted": "rabbit.",
+   "missed": "yellow"
+  },
+  "spoken_page1": "Rosie is a small banana. She puts on her coat.",
+  "flags_p1": [
+   [
+    "Rosie",
+    "correct"
+   ],
+   [
+    "is",
+    "correct"
+   ],
+   [
+    "a",
+    "correct"
+   ],
+   [
+    "small",
+    "correct"
+   ],
+   [
+    "rabbit.",
+    "substituted"
+   ],
+   [
+    "She",
+    "correct"
+   ],
+   [
+    "puts",
+    "correct"
+   ],
+   [
+    "on",
+    "correct"
+   ],
+   [
+    "her",
+    "correct"
+   ],
+   [
+    "yellow",
+    "missed"
+   ],
+   [
+    "coat.",
+    "correct"
+   ]
+  ],
+  "result_p1": "2 tricky words on this page. Tap them to hear them!",
+  "tap_to_hear": [
+   "rabbit"
+  ],
+  "flags_p2_nonclean": [],
+  "result_p2": "🌟 Perfect reading!",
+  "story2": {
+   "id": "20261027-071218-8d0f",
+   "title": "Rosie Finds Friends by the Water",
+   "trouble_words": [
+    "rabbit",
+    "yellow",
+    "river"
+   ],
+   "used": [
+    "rabbit",
+    "yellow",
+    "river"
+   ],
+   "parent": "20261027-071129-cfdd",
+   "pages": [
+    "Rosie is a small grey rabbit in a yellow raincoat.",
+    "She hops to the soft river bank.",
+    "She sees fish and frogs in the water.",
+    "She wiggles her nose at a duck.",
+    "Then she hops home happy and dry."
+   ]
+  },
+  "fresh_title": true,
+  "story2_p1_nonclean": [],
+  "summary": "Asha's reading progress\n4\nstories read\n6\npages read aloud\n91%\nwords read well\nNext story will practise: rabbityellowriver\nStory\tLanguage\tPractised\tPages\tRead well\tTricky words\nRosie Finds Friends by the Water follow-up\tEnglish\trabbit, yellow, river\t1/5\t100%\t\nRosie Brings a Basket to the River\tEnglish\triver, basket, through\t2/5\t91%\trabbit, yellow\nRosie Splashes by the River follow-up\tEnglish\thops, the, rain\t1/5\t100%\t\nRosie Hops on a Rainy Day\tEnglish\triver, basket, through\t2/5\t75%\thops, rain, the\n\nKept only on this computer. Audio is never saved. Show all children and older test sessions",
+  "fresh_browser_heading": "Asha's reading progress",
+  "fresh_browser_localStorage_profile": null
+ },
+ "timings_s": {
+  "story": 11.5,
+  "story1_first_page": 9.9,
+  "story1_all_pages": 19.7,
+  "read_p1_errors_check": 1.4,
+  "read_p2_clean_check": 1.0,
+  "next_story": 15.1,
+  "story2_first_page": 9.9,
+  "story2_all_pages": 21.8,
+  "read_story2_p1_clean_check": 1.4
+ },
+ "ok": true
+}

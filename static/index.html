@@ -1,0 +1,102 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tellolo</title><style>
+:root{--bg:#fff8ec;--card:#fff;--ink:#2b2b2b;--accent:#ff7a3d;--green:#2e9e5b}
+*{box-sizing:border-box}body{font-family:"Nunito",system-ui,sans-serif;margin:0;background:var(--bg);color:var(--ink)}
+header{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background:#fff;box-shadow:0 1px 3px #0001}
+header b{font-size:24px;color:var(--accent)}header a{color:#666;font-size:14px;text-decoration:none;margin-left:14px}
+main{max-width:820px;margin:20px auto;padding:0 14px}.card{background:var(--card);border-radius:18px;padding:22px;box-shadow:0 2px 10px #0001}
+h2{margin-top:0}label{display:block;margin:12px 0 4px;font-weight:600}input,select{font-size:17px;padding:8px 10px;border:1px solid #ddd;border-radius:10px;width:100%}
+.btn{font-size:18px;padding:10px 20px;border:0;border-radius:999px;background:var(--accent);color:#fff;cursor:pointer;margin-top:16px}.btn:disabled{opacity:.4}
+.btn.alt{background:#eee;color:#333}.btn.go{background:var(--green)}.row{display:flex;gap:12px}.row>div{flex:1}
+.pic{width:100%;aspect-ratio:3/2;border-radius:14px;object-fit:cover;background:#f3ead8;display:flex;align-items:center;justify-content:center;color:#a98}
+.txt{font-size:28px;line-height:1.8;margin:16px 0}.w{padding:2px 5px;border-radius:6px;cursor:pointer}.w:hover{background:#f0f0f0}
+.correct{background:#d4f5d0}.substituted{background:#ffe08a}.missed{background:#ffb3b3;text-decoration:line-through}
+.nav{display:flex;justify-content:space-between;align-items:center}.rec{width:74px;height:74px;border-radius:50%;font-size:30px;border:0;background:#e53935;color:#fff;cursor:pointer}
+.rec.on{animation:p 1s infinite}@keyframes p{50%{opacity:.5}}.small{font-size:14px;color:#777}.err{color:#b00020;margin:10px 0}
+.chips span{display:inline-block;background:#ffe9dc;border-radius:999px;padding:3px 12px;margin:3px;font-weight:600}.hidden{display:none}
+.dots span{display:inline-block;width:10px;height:10px;border-radius:50%;background:#ddd;margin:0 3px}.dots span.on{background:var(--accent)}.dots span.done{background:var(--green)}
+</style></head><body>
+<header><b>Tellolo</b><span><span id="prov" class="small"></span><a href="/summary" id="parentLink">For parents</a><a href="#" id="privacyLink">Privacy</a></span></header>
+<main>
+<section id="s-consent" class="card hidden"><h2>Before we start (for a parent)</h2>
+<p>Tellolo helps a child practise reading aloud. Here is what happens to data:</p><ul>
+<li>When your child taps record, the audio is sent from this computer to <b>Meta's Voice Transcribe</b> service to turn it into text. Tellolo does not save the audio.</li>
+<li>Stories and pictures are made by Meta's Muse Spark and Muse Image. Only the language, level, interests and practice words are sent, never your child's name.</li>
+<li>Your child's first name is saved only on this computer, with the reading results, so the parent page can show it. It is never sent to Meta.</li>
+<li>Reading results (which words were tricky) are kept only on this computer, so the next story can practise them. You can see them under <b>For parents</b>.</li>
+<li>This is a hackathon demo: it has only been tested with adult and computer voices.</li></ul>
+<label><input type="checkbox" id="agree" style="width:auto"> I am the parent or guardian and I agree.</label>
+<button class="btn" id="consentGo" disabled>Continue</button></section>
+<section id="s-profile" class="card hidden"><h2>Who's reading today?</h2>
+<p class="small">Demo: <button class="btn alt" id="demoEn" style="margin:0 4px;font-size:14px;padding:5px 12px">Asha · English</button><button class="btn alt" id="demoHi" style="margin:0 4px;font-size:14px;padding:5px 12px">Kabir · हिन्दी</button></p>
+<div class="row"><div><label>Child's first name (stays on this computer)</label><input id="name" value="Asha"></div>
+<div><label>Language</label><select id="lang"><option value="en">English</option><option value="hi">हिन्दी Hindi</option></select></div></div>
+<div class="row"><div><label>Reading level</label><select id="level"><option>beginner</option><option>intermediate</option></select></div>
+<div><label>Loves</label><input id="int" value="animals, rivers"></div></div>
+<label>Words to practise (3)</label><input id="tw" value="river, basket, through">
+<button class="btn" id="make">Make my story ✨</button><div id="perr" class="err"></div></section>
+<section id="s-wait" class="card hidden" style="text-align:center"><h2 id="waitMsg">Writing your story…</h2><p class="small">This takes about 10 seconds.</p><div id="werr" class="err"></div></section>
+<section id="s-book" class="card hidden">
+<div class="nav"><h2 id="title" style="margin:0"></h2><div class="dots" id="dots"></div></div>
+<div class="chips small" id="chips"></div>
+<div id="picbox" style="margin-top:10px"></div><div class="txt" id="text"></div>
+<div class="nav"><button class="btn alt" id="prev">◀</button>
+<div style="text-align:center"><button class="rec" id="rec" title="Record">●</button><div class="small" id="recHint">Tap to read this page aloud</div></div>
+<button class="btn alt" id="nextp">▶</button></div>
+<div id="result" class="small" style="margin-top:10px"></div>
+<p class="small">Tap any word to hear it (your browser's voice, not Meta). <span class="w correct">read well</span> <span class="w substituted">said differently</span> <span class="w missed">skipped</span></p>
+<button class="btn go hidden" id="nextStory">Next story with my tricky words →</button></section>
+</main>
+<script>
+const $=id=>document.getElementById(id),esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let story=null,cur=0,flags={},rec=null;window.__t={};
+function show(id){document.querySelectorAll('main>section').forEach(s=>s.classList.add('hidden'));$(id).classList.remove('hidden');window.__screen=id}
+function err(el,e,retry){el.innerHTML='⚠ '+esc(e.message)+(retry?' <button class="btn alt" style="margin:0 0 0 8px;font-size:14px;padding:4px 12px">Try again</button>':'');if(retry)el.querySelector('button').onclick=retry}
+async function api(u,b){let r;try{r=await fetch(u,b===undefined?{}:{method:'POST',body:b,headers:b instanceof FormData?{}:{'Content-Type':'application/json'}})}catch(e){throw new Error('Can\'t reach Tellolo. Is it running?')}
+ const j=await r.json().catch(()=>({error:'Unexpected reply'}));if(!r.ok)throw new Error(j.error||'Error '+r.status);return j}
+function speak(w){window.__spoken=(window.__spoken||[]).concat(w);if(!window.speechSynthesis)return;const u=new SpeechSynthesisUtterance(w);u.lang=story.language=='hi'?'hi-IN':'en-US';speechSynthesis.cancel();speechSynthesis.speak(u)}
+function renderPage(){const p=story.pages[cur];$('title').textContent=story.title;
+ $('dots').innerHTML=story.pages.map((_,i)=>`<span class="${i==cur?'on':flags[i]?'done':''}"></span>`).join('');
+ $('chips').innerHTML='Practising: '+story.trouble_words.map(w=>`<span>${esc(w)}</span>`).join('')+(story.parent?' <i>(from your last story)</i>':'');
+ $('picbox').innerHTML=p.image?`<img class="pic" id="pic" src="${p.image}">`:`<div class="pic">🎨 drawing…</div>`;
+ const f=flags[cur];$('text').innerHTML=f?f.words.map(w=>`<span class="w ${w.status}" data-w="${esc(w.display)}" title="${w.heard?'heard: '+esc(w.heard):''}">${esc(w.display)}</span>`).join(' '):p.text.split(/\s+/).map(w=>`<span class="w" data-w="${esc(w)}">${esc(w)}</span>`).join(' ');
+ $('result').innerHTML=f?(f.errors?`${f.errors} tricky word${f.errors>1?'s':''} on this page. Tap them to hear them!`:'🌟 Perfect reading!'):'';
+ $('prev').disabled=cur==0;$('nextp').disabled=cur==4;$('nextStory').classList.toggle('hidden',!Object.keys(flags).length);
+ const im=$('pic');if(im&&cur==0&&!window.__t.firstPageMs)im.onload=()=>{window.__t.firstPageMs=window.__t.firstPageMs||performance.now()-window.__t.imgStart}}
+document.addEventListener('click',e=>{const w=e.target.dataset&&e.target.dataset.w;if(w)speak(w.replace(/[^\p{L}\p{M}\p{N}]/gu,''))});
+$('prev').onclick=()=>{cur--;renderPage()};$('nextp').onclick=()=>{cur++;renderPage()};
+async function drawPictures(){window.__t={imgStart:performance.now()};
+ try{await api('/api/images',JSON.stringify({id:story.id}))}catch(e){return err($('result'),e,drawPictures)}
+ const poll=async()=>{let s;try{s=await api('/api/story/'+story.id)}catch(e){return err($('result'),e,poll)}
+  let changed=false;s.pages.forEach((p,i)=>{if(p.image&&!story.pages[i].image){story.pages[i].image=p.image;changed=true}});
+  if(changed){renderPage();if(story.pages[0].image&&!window.__t.firstSeenMs)window.__t.firstSeenMs=performance.now()-window.__t.imgStart}
+  if(s.images.status=='running')return setTimeout(poll,700);
+  const er=Object.keys(s.images.errors||{});if(er.length)err($('result'),new Error(`Some pictures didn't draw (page ${er.join(', ')}).`),drawPictures);else window.__t.allMs=performance.now()-window.__t.imgStart};poll()}
+async function startStory(req,url){show('s-wait');$('waitMsg').textContent=url?'Writing a new story with your tricky words…':'Writing your story…';$('werr').innerHTML='';
+ try{story=await api(url||'/api/story',JSON.stringify(req))}catch(e){return err($('werr'),e,()=>startStory(req,url))}
+ cur=0;flags={};show('s-book');renderPage();drawPictures();if(story.child)$('parentLink').href='/summary?child='+story.child}
+let prof={};const slug=n=>(n||'child').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')||'child';
+function childId(){const n=$('name').value.trim();if(prof.child&&prof.name==n)return prof.child;const ids=JSON.parse(localStorage.tellolo_children||'{}');if(!ids[n]){ids[n]=slug(n)+'-'+Math.random().toString(36).slice(2,6);localStorage.tellolo_children=JSON.stringify(ids)}return ids[n]}
+async function demo(lang){const s=await api('/seed.json');const p=s.profiles[lang];prof=p;$('name').value=p.name;$('lang').value=p.lang;$('level').value=p.level;$('int').value=p.interests;$('tw').value=p.trouble_words;$('make').click()}
+$('demoEn').onclick=()=>demo('en');$('demoHi').onclick=()=>demo('hi');
+$('make').onclick=()=>{const tw=$('tw').value.split(',').map(x=>x.trim()).filter(Boolean);if(tw.length<1)return err($('perr'),new Error('Add at least one word to practise.'));
+ const child=childId();const hero=prof.child==child?prof.hero:null;
+ localStorage.tellolo_profile=JSON.stringify({name:$('name').value,lang:$('lang').value,level:$('level').value,int:$('int').value,tw:$('tw').value,child,hero});
+ $('parentLink').href='/summary?child='+child;api('/api/profile',JSON.stringify({child,name:$('name').value.trim()})).catch(()=>{});startStory({child,hero,lang:$('lang').value,level:$('level').value,trouble_words:tw,interests:$('int').value.split(',').map(x=>x.trim()).filter(Boolean)})};
+$('nextStory').onclick=()=>startStory({id:story.id},'/api/next');
+$('lang').onchange=()=>{$('tw').value=$('lang').value=='hi'?'नदी, टोकरी, पेड़':'river, basket, through'};
+$('rec').onclick=async()=>{if(rec){rec.stop();return}let s;
+ try{s=await navigator.mediaDevices.getUserMedia({audio:true})}catch(e){return err($('result'),new Error('The microphone is blocked. Allow it in the browser and try again.'))}
+ const ch=[],page=cur;rec=new MediaRecorder(s);rec.ondataavailable=e=>ch.push(e.data);$('rec').classList.add('on');$('rec').textContent='■';$('recHint').textContent='Reading… tap to stop';
+ rec.onstop=()=>{s.getTracks().forEach(t=>t.stop());rec=null;$('rec').classList.remove('on');$('rec').textContent='●';$('recHint').textContent='Tap to read this page aloud';
+  const send=async()=>{$('result').textContent='Listening…';const f=new FormData();f.append('id',story.id);f.append('page',page);f.append('audio',new Blob(ch,{type:'audio/webm'}),'page.webm');
+   try{flags[page]=await api('/api/read',f);if(cur==page)renderPage()}catch(e){err($('result'),e,send)}};send()};rec.start()};
+$('agree').onchange=()=>$('consentGo').disabled=!$('agree').checked;
+$('consentGo').onclick=()=>{localStorage.tellolo_consent=new Date().toISOString();show('s-profile');const dq=new URLSearchParams(location.search).get('demo');if(dq)demo(dq)};
+$('privacyLink').onclick=e=>{e.preventDefault();$('agree').checked=!!localStorage.tellolo_consent;show('s-consent')};
+try{const p=JSON.parse(localStorage.tellolo_profile||'null');if(p){for(const k of ['name','lang','level','int','tw'])$(k).value=p[k];if(p.child){prof={child:p.child,name:p.name,hero:p.hero};$('parentLink').href='/summary?child='+p.child}}}catch(e){}
+const qid=new URLSearchParams(location.search).get('id');
+if(qid)api('/api/story/'+qid).then(j=>{story=j;show('s-book');renderPage();if(j.child)$('parentLink').href='/summary?child='+j.child}).catch(e=>{show('s-profile');err($('perr'),e)});
+else show(localStorage.tellolo_consent?'s-profile':'s-consent');
+const dq=new URLSearchParams(location.search).get('demo');if(dq&&localStorage.tellolo_consent)demo(dq);
+api('/api/info').then(j=>{if(j.provider=='mock')$('prov').textContent='DEMO MODE (mock, no Meta calls)'}).catch(()=>{});
+</script></body></html>

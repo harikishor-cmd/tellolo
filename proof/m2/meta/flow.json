@@ -1,0 +1,110 @@
+{
+ "mode": "meta",
+ "story1": {
+  "id": "20261027-063836-be84",
+  "title": "Milo and the Basket",
+  "trouble_words": [
+   "river",
+   "basket",
+   "through"
+  ],
+  "used": [
+   "river",
+   "basket",
+   "through"
+  ],
+  "seconds": 8.9,
+  "page1": "Milo the fox wakes up. He sees a big basket."
+ },
+ "planted": {
+  "substituted": "basket.",
+  "missed": "wakes"
+ },
+ "spoken_by_tts": "Milo the fox up. He sees a big banana",
+ "first_page_ms_browser": 9066,
+ "all_pages_ms_browser": 23095,
+ "image_status": "All 5 pictures ready",
+ "server_image_timings_s": {
+  "status": "done",
+  "started": 1793083116.764941,
+  "timings": {
+   "1": 8.4,
+   "4": 17.1,
+   "3": 18.8,
+   "5": 19.5,
+   "2": 22.2
+  },
+  "errors": {},
+  "total_s": 22.2
+ },
+ "read_result": " errors: 2, error rate 20.0% — heard: \" Milo the fox up. He sees a big banana.\"",
+ "flag_spans": [
+  [
+   "Milo",
+   "correct"
+  ],
+  [
+   "the",
+   "correct"
+  ],
+  [
+   "fox",
+   "correct"
+  ],
+  [
+   "wakes",
+   "missed"
+  ],
+  [
+   "up.",
+   "correct"
+  ],
+  [
+   "He",
+   "correct"
+  ],
+  [
+   "sees",
+   "correct"
+  ],
+  [
+   "a",
+   "correct"
+  ],
+  [
+   "big",
+   "correct"
+  ],
+  [
+   "basket.",
+   "substituted"
+  ]
+ ],
+ "tap_to_hear_spoken": [
+  "wakes"
+ ],
+ "story2": {
+  "id": "20261027-063914-277b",
+  "title": "Pip Has Fun All Day",
+  "trouble_words": [
+   "wakes",
+   "basket",
+   "river"
+  ],
+  "used": [
+   "wakes",
+   "basket",
+   "river"
+  ],
+  "parent": "20261027-063836-be84",
+  "pages": [
+   "Pip wakes in the warm sun.",
+   "Pip finds a red basket.",
+   "Pip runs to the blue river.",
+   "Pip jumps and plays all day.",
+   "Pip sleeps under the stars."
+  ]
+ },
+ "summary_text": "Story\tLang\tPractised words\tPages read\tAvg error rate\tWords to practise\tNext story will use\nMilo and the Basket\ten\triver, basket, through\t1/5\t20.0%\tbasket, wakes\twakes, basket, river\nTinku (beginner)\ten\triver, basket, through\t1/5\t18.2%\tTinku, little\tlittle, river, basket",
+ "bad_id_error_shown": "⚠ Bad request: story not found"
+}

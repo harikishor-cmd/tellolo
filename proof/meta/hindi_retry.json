@@ -1,0 +1,169 @@
+{
+ "errored_text": "मीनू छोटी मछली है। वह नदी में तैरती केला। सुबह पानी ठंडा है। मीनू खुश है। किनारे बड़ा पेड़ है। उसे देखती है। पानी में एक टोकरी है। मीनू पास जाती कुत्ता। मीनू टोकरी हटाती है। पानी साफ लगता है।",
+ "planted": [
+  [
+   "है।",
+   "substituted"
+  ],
+  [
+   "मीनू",
+   "missed"
+  ],
+  [
+   "है।",
+   "substituted"
+  ]
+ ],
+ "espeak_errors": {
+  "heard": "मग्नदी में पैर की केला, सुबह पानी ठंडा है, मीनू खुश है, किनारे बड़ा बड़ा पेड़ है, उसे देखती है, पानी में एक तोतली है, मीनू पास जाती कुत्ता, मीनू तोकरी हटाती है, पानी साफ लगता है,.",
+  "error_rate": 0.3171,
+  "insertions": [],
+  "flags": [
+   {
+    "word": "मीनू",
+    "status": "missed",
+    "heard": ""
+   },
+   {
+    "word": "छोटी",
+    "status": "missed",
+    "heard": ""
+   },
+   {
+    "word": "मछली",
+    "status": "missed",
+    "heard": ""
+   },
+   {
+    "word": "है",
+    "status": "missed",
+    "heard": ""
+   },
+   {
+    "word": "वह",
+    "status": "substituted",
+    "heard": "मग्नदी"
+   },
+   {
+    "word": "नदी",
+    "status": "substituted",
+    "heard": "में"
+   },
+   {
+    "word": "में",
+    "status": "substituted",
+    "heard": "पैर"
+   },
+   {
+    "word": "तैरती",
+    "status": "substituted",
+    "heard": "की"
+   },
+   {
+    "word": "है",
+    "status": "substituted",
+    "heard": "केला"
+   },
+   {
+    "word": "मीनू",
+    "status": "missed",
+    "heard": ""
+   },
+   {
+    "word": "टोकरी",
+    "status": "substituted",
+    "heard": "तोतली"
+   },
+   {
+    "word": "है",
+    "status": "substituted",
+    "heard": "कुत्ता"
+   },
+   {
+    "word": "टोकरी",
+    "status": "substituted",
+    "heard": "तोकरी"
+   }
+  ],
+  "planted_flags": [
+   {
+    "word": "है",
+    "status": "substituted",
+    "heard": "केला"
+   },
+   {
+    "word": "मीनू",
+    "status": "missed",
+    "heard": ""
+   },
+   {
+    "word": "है",
+    "status": "substituted",
+    "heard": "कुत्ता"
+   }
+  ],
+  "caught": 3,
+  "extra_flags": 10
+ },
+ "gtts_clean": {
+  "heard": "मीनू छोटी मछली है, वह नदी में तैरती है, सुबह पानी ठंडा है, मीनू खुश है, किनारे बड़ा पेड़ है, मीनू उसे देखती है, पानी में एक एक टोकरी है, मीनू पास जाती है, मीनू टोकरी हटाती है, पानी साफ लगता है,.",
+  "error_rate": 0.0,
+  "insertions": [],
+  "flags": []
+ },
+ "gtts_errors": {
+  "heard": "मीनू छोटी छोटी मछली है। वह नदी में तैरती केला। सुबह पानी ठंडा है। मीनू खुश है। किनारे बड़ा पेड़ है। उसे देखती है। पानी में एक टोकरी है। मीनू पास जाती कुत्ता मीनू टोकरी हटाती है। पानी साफ लगता है।",
+  "error_rate": 0.0732,
+  "insertions": [],
+  "flags": [
+   {
+    "word": "है",
+    "status": "substituted",
+    "heard": "केला"
+   },
+   {
+    "word": "मीनू",
+    "status": "missed",
+    "heard": ""
+   },
+   {
+    "word": "है",
+    "status": "substituted",
+    "heard": "कुत्ता"
+   }
+  ],
+  "planted_flags": [
+   {
+    "word": "है",
+    "status": "substituted",
+    "heard": "केला"
+   },
+   {
+    "word": "मीनू",
+    "status": "missed",
+    "heard": ""
+   },
+   {
+    "word": "है",
+    "status": "substituted",
+    "heard": "कुत्ता"
+   }
+  ],
+  "caught": 3,
+  "extra_flags": 0
+ },
+ "calls": [
+  [
+   "/asr/transcribe",
+   200
+  ],
+  [
+   "/asr/transcribe",
+   200
+  ],
+  [
+   "/asr/transcribe",
+   200
+  ]
+ ]
+}

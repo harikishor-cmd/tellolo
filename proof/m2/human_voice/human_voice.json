@@ -1,0 +1,25 @@
+[
+ {
+  "page": 1,
+  "librispeech_id": "1272-128104-0000",
+  "speaker": 1272,
+  "expected": "Mister quilter is the teacher of the middle classes and we are glad to welcome his gospel.",
+  "reference_transcript": "MISTER QUILTER IS THE APOSTLE OF THE MIDDLE CLASSES AND WE ARE GLAD TO WELCOME HIS GOSPEL",
+  "result": " errors: 1, error rate 5.9% \u2014 heard: \"Mister Quilter is the apostle of the middle middle classes, and we are glad to welcome his gospel.\"",
+  "flags": [
+   [
+    "teacher",
+    "substituted"
+   ]
+  ]
+ },
+ {
+  "page": 2,
+  "librispeech_id": "1272-128104-0001",
+  "speaker": 1272,
+  "expected": "Nor is Mister Quilter's manner less interesting than his matter.",
+  "reference_transcript": "NOR IS MISTER QUILTER'S MANNER LESS INTERESTING THAN HIS MATTER",
+  "result": " errors: 0, error rate 0.0% \u2014 heard: \"nor is Mister Quilter's manner less interesting than his matter\"",
+  "flags": []
+ }
+]

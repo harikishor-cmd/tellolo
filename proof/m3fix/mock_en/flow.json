@@ -1,0 +1,144 @@
+{
+ "lang": "en",
+ "label": "mock_en",
+ "steps": {
+  "writing_screen": "too fast to capture",
+  "story1": {
+   "child": "demo-asha",
+   "hero": "Rosie, a small grey rabbit with a yellow raincoat",
+   "character": "Rosie",
+   "id": "20261027-065309-7c36",
+   "title": "Rosie and the river (4)",
+   "trouble_words": [
+    "river",
+    "basket",
+    "through"
+   ],
+   "used": [
+    "river",
+    "basket",
+    "through"
+   ],
+   "pages": [
+    "Rosie the little fox found a river under the old tree.",
+    "She showed the river to her friend, a basket who lived by the river.",
+    "Together they walked to the through to find out who lost it.",
+    "The basket said the through was too far, but Rosie kept going.",
+    "At sunset they found the owner, and everyone shared a river and laughed."
+   ],
+   "devanagari": false
+  },
+  "planted": {
+   "substituted": "little",
+   "missed": "found"
+  },
+  "spoken_page1": "Rosie the banana fox a river under the old tree.",
+  "flags_p1": [
+   [
+    "Rosie",
+    "missed"
+   ],
+   [
+    "the",
+    "correct"
+   ],
+   [
+    "little",
+    "substituted"
+   ],
+   [
+    "fox",
+    "correct"
+   ],
+   [
+    "found",
+    "correct"
+   ],
+   [
+    "a",
+    "correct"
+   ],
+   [
+    "river",
+    "correct"
+   ],
+   [
+    "under",
+    "correct"
+   ],
+   [
+    "the",
+    "correct"
+   ],
+   [
+    "old",
+    "correct"
+   ],
+   [
+    "tree.",
+    "correct"
+   ]
+  ],
+  "result_p1": "2 tricky words on this page. Tap them to hear them!",
+  "tap_to_hear": [
+   "Rosie"
+  ],
+  "flags_p2_nonclean": [
+   [
+    "showed",
+    "substituted"
+   ],
+   [
+    "friend,",
+    "missed"
+   ]
+  ],
+  "result_p2": "2 tricky words on this page. Tap them to hear them!",
+  "story2": {
+   "id": "20261027-065326-e344",
+   "title": "Rosie and the little (5)",
+   "trouble_words": [
+    "little",
+    "showed",
+    "friend"
+   ],
+   "used": [
+    "little",
+    "showed",
+    "friend"
+   ],
+   "parent": "20261027-065309-7c36",
+   "pages": [
+    "Rosie the little fox found a little under the old tree.",
+    "She showed the little to her friend, a showed who lived by the river.",
+    "Together they walked to the friend to find out who lost it.",
+    "The showed said the friend was too far, but Rosie kept going.",
+    "At sunset they found the owner, and everyone shared a little and laughed."
+   ]
+  },
+  "fresh_title": true,
+  "story2_p1_nonclean": [
+   [
+    "little",
+    "substituted"
+   ],
+   [
+    "little",
+    "missed"
+   ]
+  ],
+  "summary": "Reading progress: demo-asha\nNo reading yet. Stories your child reads will show up here.\n\nKept only on this computer. Audio is never saved. Show all children and older test sessions"
+ },
+ "timings_s": {
+  "story": 3.1,
+  "story1_first_page": 1.4,
+  "story1_all_pages": 2.1,
+  "read_p1_errors_check": 0.1,
+  "read_p2_clean_check": 0.1,
+  "next_story": 0.1,
+  "story2_first_page": 1.4,
+  "story2_all_pages": 2.1,
+  "read_story2_p1_clean_check": 0.1
+ },
+ "ok": true
+}

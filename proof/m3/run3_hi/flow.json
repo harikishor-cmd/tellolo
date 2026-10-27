@@ -1,0 +1,99 @@
+{
+ "lang": "hi",
+ "label": "run3_hi",
+ "steps": {
+  "story1": {
+   "id": "20261027-064657-5b38",
+   "title": "छोटू की नन्ही सुबह",
+   "trouble_words": [
+    "नदी",
+    "टोकरी",
+    "पेड़"
+   ],
+   "used": [
+    "नदी",
+    "टोकरी",
+    "पेड़"
+   ],
+   "pages": [
+    "छोटू नदी के पास रहता था।",
+    "वह रोज पानी में तैरता था।",
+    "एक दिन उसे एक टोकरी मिली।",
+    "वह उसे बड़े पेड़ के नीचे लाया।",
+    "अब वह खुशी से सो गया।"
+   ],
+   "devanagari": true
+  },
+  "planted": {
+   "substituted": "छोटू",
+   "missed": "रहता"
+  },
+  "spoken_page1": "केला नदी के पास था।",
+  "flags_p1": [
+   [
+    "छोटू",
+    "substituted"
+   ],
+   [
+    "नदी",
+    "correct"
+   ],
+   [
+    "के",
+    "correct"
+   ],
+   [
+    "पास",
+    "correct"
+   ],
+   [
+    "रहता",
+    "missed"
+   ],
+   [
+    "था।",
+    "correct"
+   ]
+  ],
+  "result_p1": "2 tricky words on this page. Tap them to hear them!",
+  "tap_to_hear": [
+   "छोटू"
+  ],
+  "flags_p2_nonclean": [],
+  "result_p2": "🌟 Perfect reading!",
+  "story2": {
+   "id": "20261027-064738-4639",
+   "title": "मिंटू की सुबह",
+   "trouble_words": [
+    "रहता",
+    "नदी",
+    "टोकरी"
+   ],
+   "used": [
+    "रहता",
+    "नदी",
+    "टोकरी"
+   ],
+   "parent": "20261027-064657-5b38",
+   "pages": [
+    "मिंटू नदी के पास रहता है।",
+    "उसके पास एक छोटी टोकरी है।",
+    "सुबह वह पानी को देखता है।",
+    "वह पानी में तैरता है।",
+    "रात को वह खुश सोता है।"
+   ]
+  },
+  "summary": "Reading progress\n4\nstories read\n7\npages read aloud\n84%\nwords read well\nNext story will practise: रहतानदीटोकरी\nStory\tLanguage\tPractised\tPages\tRead well\tTricky words\nछोटू की नन्ही सुबह\tHindi\tनदी, टोकरी, पेड़\t2/5\t83%\tछोटू, रहता\nPip the Little Otter\tEnglish\triver, basket, through\t2/5\t80%\tPip, is, little, otter\nचुन्नू की सैर\tHindi\tनदी, टोकरी, पेड़\t2/5\t91%\tचुन्नू, बत्तख\nMilo and the Basket\tEnglish\triver, basket, through\t1/5\t80%\tbasket, wakes\n\nKept only on this computer. Audio is never saved. Show test sessions"
+ },
+ "timings_s": {
+  "story": 10.4,
+  "story1_first_page": 8.5,
+  "story1_all_pages": 18.3,
+  "read_p1_errors_check": 0.9,
+  "read_p2_clean_check": 1.0,
+  "next_story": 11.5,
+  "story2_first_page": 8.4,
+  "story2_all_pages": 21.8
+ },
+ "ok": true
+}

@@ -1,0 +1,3 @@
+# Tellolo M3 fix 2 — Oct 27 2026 (IST). Real Meta calls: 15 (2 Spark + 10 Image + 3 ASR), all OK.
+1 Child name in a fresh browser: PASS — real_en/8_parent_summary_this_child.png heading "Asha's reading progress" in a new headless browser with empty localStorage. Name stored in data/profiles.json (local, outside static/). prompts.jsonl = both Spark prompts sent this run: 0 mentions of "Asha". Consent text + README updated.
+2 Short words never become practice words: PASS — next story words: rabbit, yellow, river (planted errors on rabbit/yellow caught 2/2; 0 flags on 2 clean pages). This run had no clipped last word, so the filter was not triggered live; re-running word selection on the earlier clipped session gives hops, rain, river (stopword_recheck.txt).

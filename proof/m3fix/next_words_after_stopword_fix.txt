@@ -1,0 +1,2 @@
+real_en ['hops', 'rain', 'river'] Rosie banana out in K. | expected: Rosie hops out in the rain. | tts said: Rosie banana out in the
+real_hi ['छोटा', 'कुत्ता', 'नदी'] मोती केला है. | expected: मोती छोटा कुत्ता है। | tts said: मोती केला है।
