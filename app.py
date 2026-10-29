@@ -52,5 +52,8 @@ class H(BaseHTTPRequestHandler):
         if isinstance(e, (ValueError, KeyError, FileNotFoundError)): return self._send(400, {"error": f"Bad request: {e}"[:300], "retryable": False})
         traceback.print_exc(); self._send(500, {"error": "Something went wrong on the server; please try again.", "retryable": True})
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8010)); print(f"Tellolo on http://localhost:{port} provider={get_provider().name}", flush=True)
-    ThreadingHTTPServer(("127.0.0.1", port), H).serve_forever()
+    if os.environ.get("RENDER"): os.environ.setdefault("TELLOLO_PROVIDER", "meta")
+    for d in ("data", os.path.join("static", "out")): os.makedirs(os.path.join(os.path.dirname(os.path.abspath(__file__)), d), exist_ok=True)
+    port = int(os.environ.get("PORT", 8010)); host = os.environ.get("HOST") or ("0.0.0.0" if "PORT" in os.environ else "127.0.0.1")
+    print(f"Tellolo on http://{host}:{port} provider={get_provider().name}", flush=True)
+    ThreadingHTTPServer((host, port), H).serve_forever()

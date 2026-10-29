@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: tellolo
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python3 app.py
+    envVars:
+      - key: META_API_KEY
+        sync: false
+      - key: TELLOLO_PROVIDER
+        value: meta
+      - key: PYTHON_VERSION
+        value: 3.13.5

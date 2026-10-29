@@ -63,3 +63,10 @@ TBD: no licence chosen yet (Hari to decide before any public repo). Until then, 
 
 ## Known gaps
 Not tested on a real microphone or real device. Tap-to-hear sound not verified. Short clipped words at the end of a recording are sometimes heard wrong. Spark Open not used (no credits).
+
+## Deploy on Render
+
+1. On Render, choose **New → Blueprint** and pick this repo; `render.yaml` sets up a free Python web service.
+2. Build: `pip install -r requirements.txt` · Start: `python3 app.py` (binds `0.0.0.0:$PORT`).
+3. Set `META_API_KEY` as a secret when prompted (never commit it). `TELLOLO_PROVIDER=meta` is preset; on Render the app defaults to `meta` anyway.
+4. Note: the free plan's disk is ephemeral — profiles in `data/` and generated stories in `static/out/` reset on each restart/redeploy.
