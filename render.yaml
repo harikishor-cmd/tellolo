@@ -4,7 +4,8 @@ services:
     env: python
     plan: free
     buildCommand: pip install -r requirements.txt
-    startCommand: python3 app.py
+    startCommand: python3 -u app.py
+    healthCheckPath: /healthz
     envVars:
       - key: META_API_KEY
         sync: false
