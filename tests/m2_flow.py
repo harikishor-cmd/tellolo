@@ -4,7 +4,8 @@ import json, os, subprocess, sys, tempfile, time, wave, requests
 from playwright.sync_api import sync_playwright
 mode, port = sys.argv[1], sys.argv[2]; HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 D = os.path.join(HERE, "proof", "m2", mode); os.makedirs(D, exist_ok=True); U = f"http://127.0.0.1:{port}"
-t = time.time(); s = requests.post(U + "/api/story", json={"lang": "en", "level": "beginner", "trouble_words": ["river", "basket", "through"], "interests": ["animals"]}, timeout=300).json()
+PH = {"X-Tellolo-Pass": os.environ.get("TELLOLO_PASSCODE", "")}
+t = time.time(); s = requests.post(U + "/api/story", json={"lang": "en", "level": "beginner", "trouble_words": ["river", "basket", "through"], "interests": ["animals"]}, headers=PH, timeout=300).json()
 res = {"mode": mode, "story1": {"id": s["id"], "title": s["title"], "trouble_words": s["trouble_words"], "used": s["trouble_words_used"], "seconds": round(time.time() - t, 1), "page1": s["pages"][0]["text"]}}
 ws = s["pages"][0]["text"].split(); order = sorted(range(len(ws)), key=lambda i: -len(ws[i].strip(".,!?")))
 planted = {"substituted": ws[order[0]], "missed": ws[order[1]]}; ws[order[0]] = "banana"; ws[order[1]] = ""
@@ -18,7 +19,7 @@ with sync_playwright() as p:
     res["first_page_ms_browser"] = round(pg.evaluate("window.__t.firstPageMs")); pg.screenshot(path=os.path.join(D, "1_first_page_shown.png"))
     pg.wait_for_function("window.__t.allMs>0 || document.getElementById('status').innerText.includes('failed')", timeout=300000)
     res["all_pages_ms_browser"] = round(pg.evaluate("window.__t.allMs||0")); res["image_status"] = pg.inner_text("#status")
-    res["server_image_timings_s"] = requests.get(f"{U}/api/story/{s['id']}").json()["images"]
+    res["server_image_timings_s"] = requests.get(f"{U}/api/story/{s['id']}", headers=PH, timeout=30).json()["images"]
     pg.click("#rec0"); pg.wait_for_timeout(int(dur * 1000) + 1500); pg.click("#rec0")
     pg.wait_for_function("document.getElementById('r0').textContent.includes('error')", timeout=120000)
     res["read_result"] = pg.inner_text("#r0"); res["flag_spans"] = pg.eval_on_selector_all("#t0 .w", "els=>els.map(e=>[e.textContent,e.className.replace('w ','')])")

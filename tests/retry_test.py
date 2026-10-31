@@ -16,9 +16,9 @@ srv = ThreadingHTTPServer(("127.0.0.1", 8099), F); threading.Thread(target=srv.s
 os.environ.update(META_API_BASE="http://127.0.0.1:8099", META_API_KEY="dummy-not-a-real-key", META_BACKOFF="0.2", META_TIMEOUT="1")
 from providers import meta
 P = meta.MetaProvider(); res = []
-def case(name, plan, expect_ok):
+def case(name, plan, expect_ok, call=lambda: P.transcribe(b"RIFF", "en", "")):
     PLAN[:] = plan; meta.CALLS.clear(); t = time.time()
-    try: out = P.transcribe(b"RIFF", "en", ""); ok, msg = True, out
+    try: out = call(); ok, msg = True, out
     except meta.MetaError as e: ok, msg = False, str(e)
     r = {"case": name, "server_plan": plan, "attempts": [c[1] for c in meta.CALLS], "ok": ok, "message": msg, "seconds": round(time.time() - t, 2), "pass": ok == expect_ok}
     res.append(r); print(r)
@@ -28,5 +28,9 @@ case("timeout then 200 -> recovers", ["sleep", 200], True)
 case("500 x3 -> gives up with clear message", [500, 500, 500], False)
 case("401 -> no retry, key message", [401], False)
 case("400 -> no retry", [400], False)
+case("image timeout -> no retry (Meta may already have billed it)", ["sleep", 200], False, lambda: P._post("/images/edits", retry_timeout=False, json={}))
+meta.BUDGET, keep = 0, meta.BUDGET
+case("daily budget used up -> refused before any call", [200], False)
+meta.BUDGET = keep
 json.dump(res, open(os.path.join(HERE, "proof", "m2", "retry_test.json"), "w"), indent=1)
 print("ALL PASS" if all(r["pass"] for r in res) else "FAIL")

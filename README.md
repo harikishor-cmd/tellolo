@@ -50,9 +50,10 @@ Built and tested on the hackathon's free Meta credits only. Rough cost per full 
 
 ## Privacy
 - A parent consent screen comes first (the "Privacy" link reopens it).
-- Audio goes to Meta Voice Transcribe for transcription and is not saved by Tellolo.
-- The child's first name is saved only on this computer (`data/profiles.json`, outside the web folder) so the parent page can show it; it is never sent to Meta. Meta only receives the language, level, interests, practice words and hero.
-- Reading results stay on this computer in `static/out/`, per child profile. `/summary` shows one child at a time. `/summary?all=1` also shows other children and tagged MOCK / OLD TEST sessions; nothing is deleted.
+- Audio (first 60 s of each recording) goes to Meta Voice Transcribe for transcription. Tellolo saves neither the audio nor the transcript; only the tricky words and error rate are kept.
+- The child's first name is saved on the server running Tellolo (`data/profiles.json`, outside the web folder) so the parent page can show it; it is never sent to Meta. Meta only receives the language, level, interests, practice words and a demo hero.
+- Each child is a random code kept in the browser; every story and reading is tied to it, and the API only returns or changes a child's data when that code is sent. Story JSON and reading results are API-only (only the pictures are served from `static/out/`). `/summary?all=1` works only for a browser on the same computer as a local run.
+- "Delete this child's data" on the parent page removes their stories, pictures, results and name. `TELLOLO_KEEP_HOURS` (24 on Render) deletes everything older automatically.
 - Tested only with adult and synthetic voices (espeak-ng, gTTS, LibriSpeech CC BY 4.0). No children's data was used. Real use with children needs verifiable parental consent (India DPDP Act 2023).
 
 ## Tests and proof
@@ -65,8 +66,9 @@ TBD: no licence chosen yet (Hari to decide before any public repo). Until then, 
 Not tested on a real microphone or real device. Tap-to-hear sound not verified. Short clipped words at the end of a recording are sometimes heard wrong. Spark Open not used (no credits).
 
 ## Deploy on Render
+Hosted, Tellolo refuses all API calls until `TELLOLO_PASSCODE` is set, and `/healthz` reports why it isn't ready (missing key, passcode or ffmpeg). Testers type the passcode once; the browser remembers it. Meta calls are capped per day by `TELLOLO_DAILY_META_CALLS`; also set a spending limit in your Meta account.
 
 1. On Render, choose **New → Blueprint** and pick this repo; `render.yaml` sets up a free Python web service.
 2. Build: `pip install -r requirements.txt` · Start: `python3 app.py` (binds `0.0.0.0:$PORT`).
-3. Set `META_API_KEY` as a secret when prompted (never commit it). `TELLOLO_PROVIDER=meta` is preset; on Render the app defaults to `meta` anyway.
+3. Set `META_API_KEY` and `TELLOLO_PASSCODE` as secrets when prompted (never commit them). `TELLOLO_PROVIDER=meta` is preset; on Render the app defaults to `meta` anyway.
 4. Note: the free plan's disk is ephemeral — profiles in `data/` and generated stories in `static/out/` reset on each restart/redeploy.

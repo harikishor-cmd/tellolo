@@ -9,6 +9,12 @@ services:
     envVars:
       - key: META_API_KEY
         sync: false
+      - key: TELLOLO_PASSCODE  # required when hosted: every API call needs it; share it only with testers
+        sync: false
+      - key: TELLOLO_KEEP_HOURS  # stories, reading results and names are deleted after this many hours
+        value: "24"
+      - key: TELLOLO_DAILY_META_CALLS  # hard cap on Meta calls per day (~11 per story with pictures and 5 readings)
+        value: "300"
       - key: TELLOLO_PROVIDER
         value: meta
       - key: PYTHON_VERSION
