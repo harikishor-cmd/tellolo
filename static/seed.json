@@ -1,4 +1,4 @@
-{"note": "Fixed demo seed (Oct 27 2026). Fictional children; heroes picked with multi-syllable names that Voice Transcribe hears reliably (avoids the 'Pip is' -> 'Papers' mishearing).",
+{"note": "Fixed demo seed (Oct 27 2026). Fictional children; heroes picked with multi-syllable names that Voice Transcribe hears reliably (avoids the 'Pip is' -> 'Papers' mishearing). Child ids are issued by the server per session. Interests and practice words must be in words.json.",
  "profiles": {
-  "en": {"child": "demo-asha", "name": "Asha", "lang": "en", "level": "beginner", "interests": "animals, rivers", "trouble_words": "river, basket, through", "hero": "Rosie, a small grey rabbit with a yellow raincoat"},
-  "hi": {"child": "demo-kabir", "name": "Kabir", "lang": "hi", "level": "beginner", "interests": "जानवर, नदी", "trouble_words": "नदी, टोकरी, पेड़", "hero": "मोती, a small brown puppy with a red collar"}}}
+  "en": {"name": "Asha", "lang": "en", "level": "beginner", "interests": ["animals", "rivers"], "trouble_words": ["river", "basket", "through"], "hero": "Rosie, a small grey rabbit with a yellow raincoat"},
+  "hi": {"name": "Kabir", "lang": "hi", "level": "beginner", "interests": ["animals", "rivers"], "trouble_words": ["नदी", "टोकरी", "पेड़"], "hero": "मोती, a small brown puppy with a red collar"}}}

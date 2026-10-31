@@ -8,8 +8,8 @@ __pycache__/
 # Runtime data: child profiles, generated stories, images and readings
 data/*
 !data/.gitkeep
-static/out/*
-!static/out/.gitkeep
+# Where versions before Oct 31 kept runtime data (never served now)
+static/out/
 # Large proof media (curated screenshots live in docs/screenshots/)
 proof/**/*.png
 proof/**/*.wav

@@ -3,6 +3,7 @@ build/readalong-test (Oct 26-27 2026) and docs at dev.meta.ai. Key: env META_API
 server-side; never logged."""
 import base64, json, os, threading, time, requests
 from .base import Provider
+from . import DATA
 BASE = os.environ.get("META_API_BASE", "https://api.meta.ai/v1")
 TEXT_MODEL = os.environ.get("META_TEXT_MODEL", "muse-spark-1.3")
 IMAGE_MODEL = os.environ.get("META_IMAGE_MODEL", "muse-image-1.0")
@@ -10,16 +11,28 @@ ASR_MODEL = os.environ.get("META_ASR_MODEL", "muse-voice-transcribe-1.0")
 LANG = {"en": "English", "hi": "Hindi"}
 RETRIES = int(os.environ.get("META_RETRIES", 3)); BACKOFF = float(os.environ.get("META_BACKOFF", 1.5)); TIMEOUT = int(os.environ.get("META_TIMEOUT", 60))
 class MetaError(RuntimeError):
-    def __init__(self, msg, status, retryable): super().__init__(msg); self.status, self.retryable = status, retryable
+    """maybe_billed: Meta may have done (and charged for) the work even though we got no usable answer."""
+    def __init__(self, msg, status, retryable, maybe_billed=False):
+        super().__init__(msg); self.status, self.retryable, self.maybe_billed = status, retryable, maybe_billed
 CALLS = []  # (endpoint, status) only; no payloads, no key
 BUDGET = int(os.environ.get("TELLOLO_DAILY_META_CALLS", 300))  # every attempt counts; ~11 calls per story with pictures and 5 readings
-_SPENT, _BL = {}, threading.Lock()  # ponytail: per-process and resets on restart; also set a spend limit on the Meta side
-def _charge():
+BUDGET_FILE = os.path.join(DATA, "budget.json"); _BL = threading.Lock()  # one process; the file survives restarts (not Render free-plan redeploys)
+def _spent():
     day = time.strftime("%Y-%m-%d")
+    try:
+        with open(BUDGET_FILE) as f: return day, json.load(f).get(day, 0)
+    except FileNotFoundError: return day, 0
+    except ValueError: return day, BUDGET  # unreadable counter: fail closed
+def check_budget():
     with _BL:
-        n = _SPENT.get(day, 0)
+        if _spent()[1] >= BUDGET: raise MetaError("Tellolo has used today's Meta allowance; please try again tomorrow.", None, False)
+def _charge():
+    with _BL:
+        day, n = _spent()
         if n >= BUDGET: raise MetaError("Tellolo has used today's Meta allowance; please try again tomorrow.", None, False)
-        _SPENT.clear(); _SPENT[day] = n + 1
+        os.makedirs(DATA, exist_ok=True); tmp = BUDGET_FILE + ".tmp"
+        with open(tmp, "w") as f: json.dump({day: n + 1}, f)
+        os.replace(tmp, BUDGET_FILE)
 
 class MetaProvider(Provider):
     name = "meta"
@@ -30,9 +43,11 @@ class MetaProvider(Provider):
         h = {"Authorization": "Bearer " + os.environ["META_API_KEY"]}
         if json_ct: h["Content-Type"] = "application/json"
         return h
-    def _post(self, ep, retry_timeout=True, **kw):
+    def check_budget(self): check_budget()
+    def _post(self, ep, once=False, **kw):
         """POST with retry/backoff on 429/5xx/timeouts; raises MetaError with a readable message (never the key).
-        retry_timeout=False for paid generations: after a read timeout Meta may have done (and billed) the work."""
+        once=True for image generation: retry only when Meta surely did no work (429, or no connection was made);
+        anything else (timeout, dropped connection, 5xx, unreadable 200) raises maybe_billed so it is never paid for twice."""
         last = None
         for attempt in range(1, RETRIES + 1):
             _charge()
@@ -40,16 +55,19 @@ class MetaProvider(Provider):
                 r = requests.post(BASE + ep, timeout=TIMEOUT, **kw)
             except (requests.Timeout, requests.ConnectionError) as e:
                 CALLS.append((ep, type(e).__name__)); last = f"network problem ({type(e).__name__})"
-                if isinstance(e, requests.ReadTimeout) and not retry_timeout: raise MetaError(f"Meta took too long on {ep}; try again.", None, True) from None
+                if once and not isinstance(e, requests.ConnectTimeout): raise MetaError(f"Lost contact with Meta on {ep}.", None, False, maybe_billed=True) from None
             else:
                 CALLS.append((ep, r.status_code))
                 if r.status_code == 200:
                     try: return r.json()
-                    except ValueError: last = "Meta sent an unreadable reply"
+                    except ValueError:
+                        last = "Meta sent an unreadable reply"
+                        if once: raise MetaError(last + ".", 200, False, maybe_billed=True) from None
                 elif r.status_code in (401, 403): raise MetaError(f"Meta rejected the API key ({r.status_code}). Check META_API_KEY on the server.", r.status_code, False)
                 elif r.status_code == 400: raise MetaError("Meta refused the request (400).", 400, False)
                 elif r.status_code == 429 or r.status_code >= 500:
                     last = f"Meta is busy or erroring ({r.status_code})"
+                    if once and r.status_code != 429: raise MetaError(last + ".", r.status_code, False, maybe_billed=True)
                     ra = r.headers.get("Retry-After")
                     if ra and ra.isdigit() and attempt < RETRIES: time.sleep(min(int(ra), 30)); continue
                 else: raise MetaError(f"Meta error {r.status_code}.", r.status_code, False)
@@ -75,7 +93,9 @@ class MetaProvider(Provider):
     def _img(self, ep, body):
         body.update(model=IMAGE_MODEL, n=1, output_format="png", reasoning_strength="low", size="1536x1024",
                     tool_enablement={"enable_web_search": False, "enable_shell": False, "enable_image_search": False})
-        return base64.b64decode(self._post("/images/" + ep, retry_timeout=False, headers=self._h(), json=body)["data"][0]["b64_json"])
+        j = self._post("/images/" + ep, once=True, headers=self._h(), json=body)
+        try: return base64.b64decode(j["data"][0]["b64_json"])
+        except (KeyError, IndexError, TypeError, ValueError): raise MetaError("Meta sent a picture we couldn't read.", 200, False, maybe_billed=True) from None
     def reference_image(self, character, style):
         return self._img("generations", {"prompt": f"{style} Character reference sheet: full-body front and side view of {character['name']}, {character['look']}. Plain white background."})
     def first_page_image(self, character, scene, style):

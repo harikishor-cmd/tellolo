@@ -1,0 +1,12 @@
+{"note": "Fixed allow-lists. The server only accepts practice words and interests from here; the UI shows the same lists. Interests go to Meta as their English key.",
+ "practice": {
+  "en": ["river", "basket", "through", "garden", "little", "friend", "water", "under", "happy", "house", "school", "flower", "rabbit", "yellow", "window", "morning", "laugh", "bread", "brother", "sister", "mother", "father", "family", "kitten", "puppy", "forest", "mountain", "rain", "cloud", "sunny", "night", "moon", "star", "bridge", "boat", "train", "jump", "climb", "found", "together", "because", "thought", "would", "could", "people", "every", "around", "beautiful", "quiet", "pocket", "orange", "purple", "green", "blanket", "candle", "button", "carrot", "turtle", "pencil", "picnic"],
+  "hi": ["नदी", "टोकरी", "पेड़", "पानी", "घर", "दोस्त", "फूल", "किताब", "बिल्ली", "कुत्ता", "सूरज", "चाँद", "तारा", "बारिश", "बादल", "जंगल", "पहाड़", "रास्ता", "खेल", "स्कूल", "रोटी", "दूध", "आम", "गाय", "मछली", "चिड़िया", "खरगोश", "हाथी", "बंदर", "माँ", "पिता", "भाई", "बहन", "दादी", "नाव", "रेलगाड़ी", "खिड़की", "दरवाज़ा", "सुबह", "रात", "खुश", "छोटा", "बड़ा", "हरा", "पीला", "लाल", "नीला", "मीठा", "साथ", "मिलकर"]
+ },
+ "interests": {
+  "animals": {"en": "animals", "hi": "जानवर"}, "rivers": {"en": "rivers", "hi": "नदी"}, "space": {"en": "space", "hi": "अंतरिक्ष"},
+  "trains": {"en": "trains", "hi": "रेलगाड़ी"}, "dinosaurs": {"en": "dinosaurs", "hi": "डायनासोर"}, "cricket": {"en": "cricket", "hi": "क्रिकेट"},
+  "music": {"en": "music", "hi": "संगीत"}, "gardens": {"en": "gardens", "hi": "बगीचा"}, "ocean": {"en": "the ocean", "hi": "समुद्र"},
+  "birds": {"en": "birds", "hi": "पक्षी"}, "cooking": {"en": "cooking", "hi": "खाना बनाना"}, "football": {"en": "football", "hi": "फ़ुटबॉल"}
+ }
+}
