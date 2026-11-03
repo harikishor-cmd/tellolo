@@ -117,4 +117,4 @@ All three pass on commit `9dbd730`. The milestone proof scripts (`e2e`, `m2_flow
 ## Credits and licence
 `samples/librispeech/` is LibriSpeech (Panayotov et al., openslr.org/12), CC BY 4.0, adult LibriVox readers.
 
-**Licence: none yet.** No licence file is included; until one is added, all rights are reserved. To be decided by the author before or when the repo goes public.
+**Licence: MIT.** See [LICENSE](LICENSE).
